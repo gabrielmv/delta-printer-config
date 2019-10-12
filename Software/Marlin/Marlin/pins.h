@@ -553,10 +553,10 @@
     #define TEMP_2_PIN         -1   // ANALOG NUMBERING
   #endif
 
-  #if MOTHERBOARD == 35
+  #if MOTHERBOARD == 35 
     #define HEATER_BED_PIN     -1    // NO BED
   #else
-    #if MOTHERBOARD == 77
+    #if MOTHERBOARD == 77 || MOTHERBOARD == 33
       #define HEATER_BED_PIN     9    // BED
     #else
       #define HEATER_BED_PIN     8    // BED
@@ -717,11 +717,13 @@
 
 #ifdef RAMPS_V_1_0 // RAMPS_V_1_0
   #define HEATER_0_PIN     12    // RAMPS 1.0
-  #define HEATER_BED_PIN   -1    // RAMPS 1.0
+//  #define HEATER_BED_PIN   -1    // RAMPS 1.0
+  #define HEATER_BED_PIN    9    // RAMPS 1.1
   #define FAN_PIN          11    // RAMPS 1.0
 #else // RAMPS_V_1_1 or RAMPS_V_1_2
   #define HEATER_0_PIN     10    // RAMPS 1.1
-  #define HEATER_BED_PIN    8    // RAMPS 1.1
+//  #define HEATER_BED_PIN    8    // RAMPS 1.1
+  #define HEATER_BED_PIN    9    // RAMPS 1.1
   #define FAN_PIN           9    // RAMPS 1.1
 #endif
 #define HEATER_1_PIN        -1
@@ -2210,7 +2212,7 @@
 ****************************************************************************************/
 #if MOTHERBOARD == 701
  #define KNOWN_BOARD 1
-
+.ywqb
 
  #ifndef __AVR_ATmega2560__
  #error Oops! Make sure you have 'Arduino Mega' selected from the 'Tools -> Boards' menu.
@@ -2276,7 +2278,8 @@
 
  #define TEMP_2_PIN -1 // ANALOG NUMBERING
 
- #define HEATER_BED_PIN 10 // BED
+ //#define HEATER_BED_PIN 10 // BED
+ #define HEATER_BED_PIN 6 // BED
 
  #if TEMP_SENSOR_BED == -1
    #define TEMP_BED_PIN 8 // ANALOG NUMBERING
@@ -2577,4 +2580,3 @@
                         _E0_PINS _E1_PINS _E2_PINS             \
                         analogInputToDigitalPin(TEMP_0_PIN), analogInputToDigitalPin(TEMP_1_PIN), analogInputToDigitalPin(TEMP_2_PIN), analogInputToDigitalPin(TEMP_BED_PIN) }
 #endif
-
